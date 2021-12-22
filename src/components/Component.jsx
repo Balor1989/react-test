@@ -1,10 +1,9 @@
-
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 Component.propTypes = {
-  url: PropTypes.string,
-  title: PropTypes.string,
-  name: PropTypes.string
+  url: propTypes.string,
+  title: propTypes.string,
+  name: propTypes.string
 }
 
 
