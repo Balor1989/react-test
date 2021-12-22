@@ -41,3 +41,14 @@ const jsxElement = <h2>Привет МИР!
 
 console.log(jsxElement)
 ReactDOM.render(jsxElement, document.querySelector('#root'))
+
+
+const card = <div>
+  <img src="" alt="" width="480" />
+  <h2></h2>
+  <p>Автор: <a href=""></a>
+  </p>
+  <p>Цена: кредитов</p>
+  <p>Доступность: заканчивается или есть в наличии</p>
+  <button type="button">Добавить в корзину</button>
+</div>
