@@ -28,27 +28,71 @@ import ReactDOM from 'react-dom';
 
 
 // С помощью JSX элемента
-const name = <span>Evgeniy</span>
-const myNameIs = <span>меня зовут</span>
+// const name = <span>Evgeniy</span>
+// const myNameIs = <span>меня зовут</span>
 
 
-//jsx выражение
-const jsxElement = <h2>Привет МИР!
-  { myNameIs}  
-  { name}  
-</h2>;
-//jsx выражение
+// //jsx выражение
+// const jsxElement = <h2>Привет МИР!
+//   { myNameIs}  
+//   { name}  
+// </h2>;
+// //jsx выражение
 
-console.log(jsxElement)
-ReactDOM.render(jsxElement, document.querySelector('#root'))
+// console.log(jsxElement)
+// ReactDOM.render(jsxElement, document.querySelector('#root'))
 
 
-const card = <div>
-  <img src="" alt="" width="480" />
-  <h2></h2>
-  <p>Автор: <a href=""></a>
+// 
+const images = {
+  url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+  alt: 'White and Black Long Fur Cat',
+  title: 'Title',
+  price: 1000,
+  author: {
+    tag: 'Author',
+    url:'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+  },
+  quantity:10
+  }
+
+// const card1 = <div>
+//   <img src={images.url} alt={images.alt} width="480" />
+//   <h2>{images.title}</h2>
+//   <p>Автор: <a href={images.author.url}>{images.author.tag}</a>
+//   </p>
+//   <p>Цена: {images.price} кредитов</p>
+//   <p>Доступность: заканчивается или есть в наличии</p>
+//   <button type="button">Добавить в корзину</button>
+// </div>;
+
+// const card2 = <div>
+//   <img src={images.url} alt={images.alt} width="480" />
+//   <h2>{images.title}</h2>
+//   <p>Автор: <a href={images.author.url}>{images.author.tag}</a>
+//   </p>
+//   <p>Цена: {images.price} кредитов</p>
+//   <p>Доступность: заканчивается или есть в наличии</p>
+//   <button type="button">Добавить в корзину</button>
+// </div>;
+
+// const card = <div>
+//   {card1}
+//   {card2}
+// </div>
+
+// ReactDOM.render(card, document.querySelector('#root'))
+
+function Component(props) {
+  console.log(props)
+  return ( <div>
+  <img src={props.url} alt={props.title} width="480" />
+    <h2>{props.title}</h2>
+  <p>Автор:<a href=""></a>
   </p>
   <p>Цена: кредитов</p>
   <p>Доступность: заканчивается или есть в наличии</p>
   <button type="button">Добавить в корзину</button>
-</div>
+</div>)
+}
+ReactDOM.render(<Component url={images.url} title={images.title} />, document.querySelector('#root'))
