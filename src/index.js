@@ -6,6 +6,7 @@ import './index.css';
 import Dropdown from './Dropdown/Dropdown';
 import colorPickerOptions from './ColorPicker/colorPickerOptions'
 import ColorPicker from './ColorPicker/ColorPicker';
+import App from './App'
 
 
 ReactDOM.render(
@@ -14,6 +15,7 @@ ReactDOM.render(
     <Dropdown />
     {/* <Counter initialValue = {10} /> */}
     <ColorPicker options={colorPickerOptions} />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
