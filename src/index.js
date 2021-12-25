@@ -2,14 +2,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Counter from './Counter/Counter';
-import Dropdown from './Counter/Dropdown/Dropdown';
-// import reportWebVitals from './reportWebVitals';
+// import Counter from './Counter/Counter';
+import Dropdown from './Dropdown/Dropdown';
+import colorPickerOptions from './ColorPicker/colorPickerOptions'
+import ColorPicker from './ColorPicker/ColorPicker';
+
 
 ReactDOM.render(
   <React.StrictMode>
+    <h1>Test</h1>
     <Dropdown />
     {/* <Counter initialValue = {10} /> */}
+    <ColorPicker options={colorPickerOptions} />
   </React.StrictMode>,
   document.getElementById('root')
 );
