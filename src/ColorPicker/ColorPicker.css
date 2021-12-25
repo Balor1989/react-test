@@ -1,3 +1,11 @@
 .ColorPicker__option{
     height: 30px;
+    width: 30px;
+    margin-right: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.ColorPicker__option--active {
+    transform: scale(1.5);
 }
