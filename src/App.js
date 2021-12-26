@@ -1,24 +1,23 @@
-import { Component } from "react"
-import ToDoList from "./ToDoList/ToDoList"
-
-
-
+import { Component } from "react";
+import ToDoList from "./ToDoList/ToDoList";
+import initTodos from './ToDoList/todos.json';
 
 class App extends Component {
   state = {
-    todos: [
-      { id: 'id-1', text: 'Todo-1', completed: false }, 
-      { id: 'id-2', text: 'Todo-2', completed: true }, 
-      { id: 'id-3', text: 'Todo-3', completed: false }, 
-    ],
+    todos: initTodos
   };
-  
+  deleteTodo = (todoId) => {
+    this.setState(prevState => ({
+      todos: prevState.todos.filter(todo => todo.id !== todoId)
+    }));
+  }
+
   render() {
     const {todos} = this.state
     return (
       <>
       <h1>Todo list</h1>
-        <ToDoList todos={ todos } />
+        <ToDoList todos={ todos } onDeleteTodo={this.deleteTodo} />
         </>
     )
   }
