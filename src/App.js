@@ -12,12 +12,28 @@ class App extends Component {
     }));
   }
 
+  toggleCompleted = todoId => {
+    this.setState(prevState => ({
+      todos: prevState.todos.map(todo => {
+        if (todo.id === todoId) {
+          return {
+            ...todo,
+            completed: !todo.completed
+          };
+        }
+        return todo;
+      })
+    }))
+  }
   render() {
     const {todos} = this.state
     return (
       <>
       <h1>Todo list</h1>
-        <ToDoList todos={ todos } onDeleteTodo={this.deleteTodo} />
+        <ToDoList
+          todos={todos}
+          onDeleteTodo={this.deleteTodo}
+          onToggleCompleted={this.toggleCompleted}/>
         </>
     )
   }
