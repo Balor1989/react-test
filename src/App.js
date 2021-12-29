@@ -42,6 +42,27 @@ class App extends Component {
       })
     }))
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('App componentDidUpdate')
+    if (this.state.todos !== prevState.todos) {
+      console.log("Обнова")
+      localStorage.setItem('todos', JSON.stringify(this.state.todos))
+    }
+        console.log(prevState)
+        console.log(this.state)
+  }
+  
+  componentDidMount() {
+    const todos = localStorage.getItem('todos')
+    const parseTodos = JSON.parse(todos)
+    if (!todos) {
+      return
+    }
+    this.setState({ todos: parseTodos });
+    console.log(todos)
+  }
+
   render() {
     const {todos} = this.state
     return (
