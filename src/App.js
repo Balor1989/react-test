@@ -43,7 +43,7 @@ class App extends Component {
     }))
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevState) {
     console.log('App componentDidUpdate')
     if (this.state.todos !== prevState.todos) {
       console.log("Обнова")
