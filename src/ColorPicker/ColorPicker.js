@@ -1,3 +1,4 @@
+// import { Component } from 'react/cjs/react.production.min'
 import { useState } from 'react';
 import './ColorPicker.css'
 
@@ -32,6 +33,7 @@ const ColorPicker = ({ options }) => {
 
 export default ColorPicker
 
+
 // class ColorPicker extends Component {
 //     state = {
 //         activeOptionIndex: 2,
@@ -51,10 +53,31 @@ export default ColorPicker
 
 //     render() {
 //         const { activeOptionIndex } = this.state;
+//         const { options } = this.props;
+
 //         const { label } = options[activeOptionIndex];
 //         return (
-            
+//             <div className="ColorPicker">
+//                 <h2 className="ColorPicker__title">Color Picker</h2>
+//                 <p>Выбран цвет: {label}</p>
+//                 <div>
+//                     {options.map(({ label, color }, index) => {
+//                         const optionClassName =  this.addActiveClassName(index)
+//                         return (
+//                         <button
+//                             key={label}
+//                             className={optionClassName}
+//                             style={{ backgroundColor: color }}
+//                             onClick={() => this.setActiveIndex(index)}   
+//                         ></button>
+//                     )
+//                     })}
+//                 </div>
+//             </div>
 //         )
 //     }
 // }
     
+
+
+// export default ColorPicker
