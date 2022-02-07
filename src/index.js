@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import Counter from './Counter/Counter';
+import Counter from './Counter/Counter';
 import Dropdown from './Dropdown/Dropdown';
 import colorPickerOptions from './ColorPicker/colorPickerOptions'
 import ColorPicker from './ColorPicker/ColorPicker';
@@ -13,7 +13,8 @@ ReactDOM.render(
   <React.StrictMode>
     <h1>Test</h1>
     <Dropdown />
-    {/* <Counter initialValue = {10} /> */}
+    <p className='title'></p>
+    <Counter  />
     <ColorPicker options={colorPickerOptions} />
     <App />
   </React.StrictMode>,
