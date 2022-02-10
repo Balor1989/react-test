@@ -5,10 +5,12 @@ import "./index.css";
 // import Dropdown from './Dropdown/Dropdown';
 // import colorPickerOptions from './ColorPicker/colorPickerOptions'
 // import ColorPicker from './ColorPicker/ColorPicker';
-// import App from './App'
+import App from "./App";
 
 ReactDOM.render(
-	<React.StrictMode></React.StrictMode>,
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>,
 	document.getElementById("root"),
 );
 
