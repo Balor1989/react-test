@@ -30,8 +30,6 @@ class App extends Component {
 	};
 
 	toggleCompleted = (todoId) => {
-		console.log(todoId);
-
 		this.setState((prevState) => ({
 			todos: prevState.todos.map((todo) => {
 				if (todo.id === todoId) {
@@ -48,11 +46,8 @@ class App extends Component {
 	componentDidUpdate(prevState) {
 		console.log("App componentDidUpdate");
 		if (this.state.todos !== prevState.todos) {
-			console.log("Обнова");
 			localStorage.setItem("todos", JSON.stringify(this.state.todos));
 		}
-		console.log(prevState);
-		console.log(this.state);
 	}
 
 	componentDidMount() {
@@ -62,12 +57,10 @@ class App extends Component {
 			return;
 		}
 		this.setState({ todos: parseTodos });
-		console.log(todos);
 	}
 
 	filterChange = (e) => {
 		this.setState({ filter: e.target.value });
-		console.log(e.target.value);
 	};
 
 	render() {
