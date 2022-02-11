@@ -6,22 +6,22 @@ import shortid from "shortid";
 import Filter from "./Filter/Filter";
 
 class App extends Component {
-	state = {
-		todos: initTodos,
-		filter: "",
-	};
+	// state = {
+	// 	// todos: initTodos,
+	// 	filter: "",
+	// };
 
-	addToDo = (text) => {
-		const todo = {
-			id: shortid.generate(),
-			text,
-			completed: false,
-		};
+	// addToDo = (text) => {
+	// 	const todo = {
+	// 		id: shortid.generate(),
+	// 		text,
+	// 		completed: false,
+	// 	};
 
-		this.setState((prevState) => ({
-			todos: [todo, ...prevState.todos],
-		}));
-	};
+	// 	this.setState((prevState) => ({
+	// 		todos: [todo, ...prevState.todos],
+	// 	}));
+	// };
 
 	deleteTodo = (todoId) => {
 		this.setState((prevState) => ({
@@ -43,28 +43,28 @@ class App extends Component {
 		}));
 	};
 
-	componentDidUpdate(prevState) {
-		console.log("App componentDidUpdate");
-		if (this.state.todos !== prevState.todos) {
-			localStorage.setItem("todos", JSON.stringify(this.state.todos));
-		}
-	}
+	// componentDidUpdate(prevState) {
+	// 	console.log("App componentDidUpdate");
+	// 	if (this.state.todos !== prevState.todos) {
+	// 		localStorage.setItem("todos", JSON.stringify(this.state.todos));
+	// 	}
+	// }
 
-	componentDidMount() {
-		const todos = localStorage.getItem("todos");
-		const parseTodos = JSON.parse(todos);
-		if (!todos) {
-			return;
-		}
-		this.setState({ todos: parseTodos });
-	}
+	// componentDidMount() {
+	// 	const todos = localStorage.getItem("todos");
+	// 	const parseTodos = JSON.parse(todos);
+	// 	if (!todos) {
+	// 		return;
+	// 	}
+	// 	this.setState({ todos: parseTodos });
+	// }
 
-	filterChange = (e) => {
-		this.setState({ filter: e.target.value });
-	};
+	// filterChange = (e) => {
+	// 	this.setState({ filter: e.target.value });
+	// };
 
 	render() {
-		const { todos, filter } = this.state;
+		// const { todos, filter } = this.state;
 
 		// const normalizedFilter = filter.toLowerCase();
 
@@ -74,13 +74,13 @@ class App extends Component {
 		return (
 			<>
 				<h1>Todo list</h1>
-				<ToDoList
+				{/* <ToDoList
 					todos={todos}
 					onDeleteTodo={this.deleteTodo}
 					onToggleCompleted={this.toggleCompleted}
-				/>
-				<Filter onFilterChange={this.filterChange} value={filter} />
-				<ToDoEditor onSubmit={this.addToDo} />
+				/> */}
+				{/* <Filter onFilterChange={this.filterChange} /> */}
+				<ToDoEditor />
 			</>
 		);
 	}
