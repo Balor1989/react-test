@@ -1,6 +1,5 @@
 import types from "./totos-types";
 import shortid from "shortid";
-import { type } from "@testing-library/user-event/dist/type";
 
 const addTodo = (text) => ({
 	type: types.ADD,
@@ -26,4 +25,5 @@ const filterChange = (value) => ({
 	payload: value,
 });
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default { addTodo, deleteTodo, toggleCompleted, filterChange };
