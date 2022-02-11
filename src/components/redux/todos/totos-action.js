@@ -12,5 +12,6 @@ const addTodo = createAction("todos/add", (text) => {
 });
 
 const deleteTodo = createAction("todos/delete");
+const changeFilter = createAction("todos/changeFilter");
 
-export default { deleteTodo, addTodo };
+export default { deleteTodo, addTodo, changeFilter };
