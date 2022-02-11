@@ -6,10 +6,14 @@ import "./index.css";
 // import colorPickerOptions from './ColorPicker/colorPickerOptions'
 // import ColorPicker from './ColorPicker/ColorPicker';
 import App from "./App";
+import store from "./redux/store";
+import { Provider } from "react-redux";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<Provider store={store}>
+			<App />
+		</Provider>
 	</React.StrictMode>,
 	document.getElementById("root"),
 );
