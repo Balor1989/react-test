@@ -23,11 +23,11 @@ class App extends Component {
 	// 	}));
 	// };
 
-	deleteTodo = (todoId) => {
-		this.setState((prevState) => ({
-			todos: prevState.todos.filter((todo) => todo.id !== todoId),
-		}));
-	};
+	// deleteTodo = (todoId) => {
+	// 	this.setState((prevState) => ({
+	// 		todos: prevState.todos.filter((todo) => todo.id !== todoId),
+	// 	}));
+	// };
 
 	toggleCompleted = (todoId) => {
 		this.setState((prevState) => ({
@@ -74,11 +74,7 @@ class App extends Component {
 		return (
 			<>
 				<h1>Todo list</h1>
-				{/* <ToDoList
-					todos={todos}
-					onDeleteTodo={this.deleteTodo}
-					onToggleCompleted={this.toggleCompleted}
-				/> */}
+				<ToDoList />
 				{/* <Filter onFilterChange={this.filterChange} /> */}
 				<ToDoEditor />
 			</>

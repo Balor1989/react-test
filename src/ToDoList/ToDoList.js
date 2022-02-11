@@ -1,5 +1,5 @@
-// import { connect } from "react-redux";
-// import todosActions from "../redux/todos/totos-action";
+import { connect } from "react-redux";
+import todosActions from "../redux/todos/todos-actions";
 
 const ToDoList = ({ todos, onDeleteTodo, onToggleCompleted }) => (
 	<ul className="ToDoList">
@@ -19,13 +19,13 @@ const ToDoList = ({ todos, onDeleteTodo, onToggleCompleted }) => (
 	</ul>
 );
 
-// const mapStateToProps = (state) => ({
-// 	todos: state.todos.items,
-// });
+const mapStateToProps = (state) => ({
+	todos: state.todos.items,
+});
 
-// const mapDispatchToProps = (dispatch) => ({
-// 	onDeleteTodo: () => null,
-// 	onToggleCompleted: () => null,
-// });
+const mapDispatchToProps = (dispatch) => ({
+	onDeleteTodo: () => null,
+	onToggleCompleted: () => null,
+});
 
-export default ToDoList;
+export default connect(mapStateToProps, mapDispatchToProps)(ToDoList);

@@ -10,4 +10,9 @@ const addTodo = (text) => ({
 	},
 });
 
+const deleteTodo = (todoId) => ({
+	type: types.DELETE,
+	payload: todoId,
+});
+
 export default { addTodo };
