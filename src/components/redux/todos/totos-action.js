@@ -1,10 +1,7 @@
 import { createAction } from "@reduxjs/toolkit";
 import shortid from "shortid";
 
-const ADD = "todos/add";
-const DELETE = "todos/delete";
-
-const addTodo = createAction(ADD, (text) => {
+const addTodo = createAction("todos/add", (text) => {
 	return {
 		payload: {
 			id: shortid.generate(),
@@ -14,6 +11,6 @@ const addTodo = createAction(ADD, (text) => {
 	};
 });
 
-const deleteTodo = createAction(DELETE);
+const deleteTodo = createAction("todos/delete");
 
 export default { deleteTodo, addTodo };
