@@ -3,10 +3,12 @@ import ToDoList from "./ToDoList/ToDoList";
 import initTodos from "./ToDoList/todos.json";
 import ToDoEditor from "./ToDoEditor";
 import shortid from "shortid";
+import Filter from "./Filter/Filter";
 
 class App extends Component {
 	state = {
 		todos: initTodos,
+		filter: "",
 	};
 
 	addToDo = (text) => {
@@ -63,8 +65,19 @@ class App extends Component {
 		console.log(todos);
 	}
 
+	filterChange = (e) => {
+		this.setState({ filter: e.target.value });
+		console.log(e.target.value);
+	};
+
 	render() {
-		const { todos } = this.state;
+		const { todos, filter } = this.state;
+
+		// const normalizedFilter = filter.toLowerCase();
+
+		// const visibleContactCards = todos.filter((contact) =>
+		// 	contact.name.toLowerCase().includes(normalizedFilter),
+		// );
 		return (
 			<>
 				<h1>Todo list</h1>
@@ -73,6 +86,7 @@ class App extends Component {
 					onDeleteTodo={this.deleteTodo}
 					onToggleCompleted={this.toggleCompleted}
 				/>
+				<Filter onFilterChange={this.filterChange} value={filter} />
 				<ToDoEditor onSubmit={this.addToDo} />
 			</>
 		);
