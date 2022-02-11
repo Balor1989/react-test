@@ -1,8 +1,6 @@
 import { Component } from "react";
 import ToDoList from "./ToDoList/ToDoList";
-import initTodos from "./ToDoList/todos.json";
 import ToDoEditor from "./ToDoEditor";
-import shortid from "shortid";
 import Filter from "./Filter/Filter";
 
 class App extends Component {
@@ -29,19 +27,19 @@ class App extends Component {
 	// 	}));
 	// };
 
-	toggleCompleted = (todoId) => {
-		this.setState((prevState) => ({
-			todos: prevState.todos.map((todo) => {
-				if (todo.id === todoId) {
-					return {
-						...todo,
-						completed: !todo.completed,
-					};
-				}
-				return todo;
-			}),
-		}));
-	};
+	// toggleCompleted = (todoId) => {
+	// 	this.setState((prevState) => ({
+	// 		todos: prevState.todos.map((todo) => {
+	// 			if (todo.id === todoId) {
+	// 				return {
+	// 					...todo,
+	// 					completed: !todo.completed,
+	// 				};
+	// 			}
+	// 			return todo;
+	// 		}),
+	// 	}));
+	// };
 
 	// componentDidUpdate(prevState) {
 	// 	console.log("App componentDidUpdate");
@@ -75,7 +73,7 @@ class App extends Component {
 			<>
 				<h1>Todo list</h1>
 				<ToDoList />
-				{/* <Filter onFilterChange={this.filterChange} /> */}
+				<Filter />
 				<ToDoEditor />
 			</>
 		);

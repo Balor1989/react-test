@@ -1,5 +1,6 @@
 import types from "./totos-types";
 import shortid from "shortid";
+import { type } from "@testing-library/user-event/dist/type";
 
 const addTodo = (text) => ({
 	type: types.ADD,
@@ -15,4 +16,14 @@ const deleteTodo = (todoId) => ({
 	payload: todoId,
 });
 
-export default { addTodo };
+const toggleCompleted = (todoId) => ({
+	type: types.TOGGLE_COMPLETED,
+	payload: todoId,
+});
+
+const filterChange = (value) => ({
+	type: types.CHANGE_FILTER,
+	payload: value,
+});
+
+export default { addTodo, deleteTodo, toggleCompleted, filterChange };
