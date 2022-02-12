@@ -1,12 +1,16 @@
 // import { configureStore } from "@reduxjs/toolkit";
 import todosReducer from "./todos/todos-reducer";
-import { combineReducers } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
+import logger from "redux-logger";
 
-const rootReducer = combineReducers({
-	todos: todosReducer,
+// const rootReducer = combineReducers({
+// 	todos: todosReducer,
+// });
+
+const store = configureStore({
+	reducer: { todos: todosReducer },
+	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+	devTools: process.env.NODE_ENV === "development",
 });
-
-const store = configureStore({ reducer: rootReducer });
 
 export default store;
