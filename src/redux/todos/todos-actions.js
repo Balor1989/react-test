@@ -50,4 +50,5 @@ const toggleCompleted = createAction("todos/toggleCompleted");
 
 const filterChange = createAction("todos/changeFilter");
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default { addTodo, deleteTodo, toggleCompleted, filterChange };

@@ -1,6 +1,6 @@
 // import { configureStore } from "@reduxjs/toolkit";
 import todosReducer from "./todos/todos-reducer";
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import {
 	persistStore,
 	persistReducer,
@@ -17,15 +17,11 @@ import logger from "redux-logger";
 const persistConfig = {
 	key: "todo",
 	storage,
+	blacklist: ["filter"],
 };
-const rootReducer = combineReducers({
-	todos: todosReducer,
-});
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
-	reducer: persistedReducer,
+	reducer: { todos: persistReducer(persistConfig, todosReducer) },
 	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware({
 			serializableCheck: {
@@ -44,4 +40,5 @@ const store = configureStore({
 
 const persistor = persistStore(store);
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default { store, persistor };
