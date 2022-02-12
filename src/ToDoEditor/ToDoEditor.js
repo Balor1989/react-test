@@ -1,36 +1,28 @@
-import { Component } from "react";
-import { connect } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import todosActions from "../redux/todos/todos-actions";
 
-class ToDoEditor extends Component {
-	state = {
-		message: "",
-	};
+export default function ToDoEditor() {
+	const [message, setMessage] = useState("");
+	const dispatch = useDispatch();
 
-	handleChange = (e) => {
-		this.setState({ message: e.currentTarget.value });
-	};
+	const handleChange = (e) => setMessage(e.currentTarget.value);
 
-	handleSubmit = (e) => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
-		this.props.onSubmit(this.state.message);
-		this.setState({ message: "" });
+		if (message === "") {
+			alert("!!!");
+			return;
+		}
+
+		dispatch(todosActions.addTodo(message));
+		setMessage("");
 	};
 
-	render() {
-		return (
-			<form className="ToDoEditor" onSubmit={this.handleSubmit}>
-				<textarea
-					value={this.state.message}
-					onChange={this.handleChange}></textarea>
-				<button type="submit">Создать</button>
-			</form>
-		);
-	}
+	return (
+		<form className="ToDoEditor" onSubmit={handleSubmit}>
+			<textarea value={message} onChange={handleChange}></textarea>
+			<button type="submit">Создать</button>
+		</form>
+	);
 }
-
-const mapDispatchToProps = (dispatch) => ({
-	onSubmit: (text) => dispatch(todosActions.addTodo(text)),
-});
-
-export default connect(null, mapDispatchToProps)(ToDoEditor);
