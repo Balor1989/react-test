@@ -1,4 +1,3 @@
-import { Component } from "react";
 import ToDoList from "./ToDoList/ToDoList";
 import ToDoEditor from "./ToDoEditor";
 import Filter from "./Filter/Filter";

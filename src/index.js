@@ -6,13 +6,16 @@ import "./index.css";
 // import colorPickerOptions from './ColorPicker/colorPickerOptions'
 // import ColorPicker from './ColorPicker/ColorPicker';
 import App from "./App";
-import store from "./redux/store";
+import combStore from "./redux/store";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<Provider store={store}>
-			<App />
+		<Provider store={combStore.store}>
+			<PersistGate loading={null} persistor={combStore.persistor}>
+				<App />
+			</PersistGate>
 		</Provider>
 	</React.StrictMode>,
 	document.getElementById("root"),
