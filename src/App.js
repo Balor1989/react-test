@@ -3,7 +3,7 @@ import ToDoList from "./ToDoList/ToDoList";
 import ToDoEditor from "./ToDoEditor";
 import Filter from "./Filter/Filter";
 
-class App extends Component {
+const App = () => {
 	// state = {
 	// 	// todos: initTodos,
 	// 	filter: "",
@@ -61,23 +61,22 @@ class App extends Component {
 	// 	this.setState({ filter: e.target.value });
 	// };
 
-	render() {
-		// const { todos, filter } = this.state;
+	// render() {
+	// const { todos, filter } = this.state;
 
-		// const normalizedFilter = filter.toLowerCase();
+	// const normalizedFilter = filter.toLowerCase();
 
-		// const visibleContactCards = todos.filter((contact) =>
-		// 	contact.name.toLowerCase().includes(normalizedFilter),
-		// );
-		return (
-			<>
-				<h1>Todo list</h1>
-				<ToDoList />
-				<Filter />
-				<ToDoEditor />
-			</>
-		);
-	}
-}
+	// const visibleContactCards = todos.filter((contact) =>
+	// 	contact.name.toLowerCase().includes(normalizedFilter),
+	// );
+	return (
+		<>
+			<h1>Todo list</h1>
+			<ToDoList />
+			<Filter />
+			<ToDoEditor />
+		</>
+	);
+};
 
 export default App;
