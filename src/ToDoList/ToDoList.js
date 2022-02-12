@@ -1,9 +1,9 @@
 import todosActions from "../redux/todos/todos-actions";
 import { useDispatch, useSelector } from "react-redux";
-import { getTodos } from "../redux/todos/todos-selectors";
+import { getVisibleTodos } from "../redux/todos/todos-selectors";
 
 export default function ToDoList() {
-	const todos = useSelector(getTodos);
+	const todos = useSelector(getVisibleTodos);
 
 	const dispatch = useDispatch();
 
