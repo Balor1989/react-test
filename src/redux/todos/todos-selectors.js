@@ -1,3 +1,5 @@
+import actions from "./todos-actions";
+
 export const getTodos = (state) => state.todos.items;
 export const getFilter = (state) => state.todos.filter;
 
@@ -9,4 +11,8 @@ export const getVisibleTodos = (state) => {
 	return todos.filter(({ text }) =>
 		text.toLowerCase().includes(normalizedFilter),
 	);
+};
+
+export const fetchTodos = () => (dispatch) => {
+	dispatch(actions.fetchTodosRequest());
 };

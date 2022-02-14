@@ -50,5 +50,17 @@ const toggleCompleted = createAction("todos/toggleCompleted");
 
 const filterChange = createAction("todos/changeFilter");
 
+const fetchTodosRequest = createAction("todos/fetchRequest");
+const fetchTodosSuccess = createAction("todos/fetchSuccess");
+const fetchTodosError = createAction("todos/fetchError");
+
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { addTodo, deleteTodo, toggleCompleted, filterChange };
+export default {
+	addTodo,
+	deleteTodo,
+	toggleCompleted,
+	filterChange,
+	fetchTodosRequest,
+	fetchTodosSuccess,
+	fetchTodosError,
+};
